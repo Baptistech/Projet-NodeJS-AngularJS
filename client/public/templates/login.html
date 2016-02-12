@@ -1,0 +1,51 @@
+<div ng-controller="UserController">
+    Nb Users: {{UserService.list.length}}
+        <div ng-repeat="user in UserService.list">
+        <hr>
+        Login: {{user.login}}
+        Pass : {{user.password}}
+        <br/>
+        <button ng-click="UserService.Clear(user._id)">delete</button>
+    </div>
+    <div ng-show="error.length">
+
+    </div>
+
+    <!--create a user-->
+
+    <br>
+    <div id="createForm">
+        <form>
+
+            <label for="login">LOGIN</label>
+            <input type="text" id="login" ng-model="newUser.login" name="login">
+            <label for="password">PASSWORD</label>
+            <input type="text" id="password" ng-model="newUser.password" name="password">
+            <button type="submit" ng-click="UserService.Create(newUser)">Create</button>
+
+        </form>
+    </div>
+    <hr>
+
+    <!-- Find a user-->
+
+    <form action="">
+
+        <label>Find a user</label>
+        <input type="text" id="find" ng-model="finder.id" name="find"/>
+        <button type="submit" ng-click="UserService.GetOne(finder.id)">Find</button>
+    </form>
+
+
+    UserFind: {{UserService.onelist}}
+
+
+</div>
+
+<br/>
+<br/>
+
+<a href="/#/home">home</a>
+<br/>
+<br/>
+<a href="/#/connect">Se connecter</a>

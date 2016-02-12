@@ -1,0 +1,26 @@
+<div ng-controller="connectController">
+
+{{connect}}
+    <br>
+
+    <!-- Connect/identification r-->
+
+    <div>
+
+        <form>
+
+            <label>LOGIN</label>
+            <input type="text" ng-model="connectUser.login" name="login">
+            <label>PASSWORD</label>
+            <input type="text" ng-model="connectUser.password" name="password">
+            <button type="submit" ng-click="UserService.login(connectUser)">Create</button>
+
+        </form>
+
+    </div>
+
+    <a href="/#/login">login</a>
+    <br>
+    <a href="/#/home">home</a>
+
+</div>
